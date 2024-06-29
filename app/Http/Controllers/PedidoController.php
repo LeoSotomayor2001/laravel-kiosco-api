@@ -62,8 +62,13 @@ class PedidoController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Pedido $pedido)
-    {
-        //
+    {   
+        $pedido->estado=1;
+        $pedido->save();
+
+        return [
+            'message' => 'Pedido completado',
+        ];
     }
 
     /**
